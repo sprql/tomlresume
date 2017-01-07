@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <h1>{{basics.name}}<h1>
+        <h2>{{basics.location.city}}</h2>
+
+        <section>
+            <header>
+                <h3>About</h3>
+            </header>
+            <div>
+                <p>{{basics.summary}}</p>
+                {{#basics.phone}}
+                <strong>Phone:</strong> {{basics.phone}} <br />
+                {{/basics.phone}}
+                {{#basics.email}}
+                <strong>Email:</strong> {{basics.email}}<br />
+                {{/basics.email}}
+                {{#profiles.twitter}}
+                <strong>Twitter:</strong> <a href="http://twitter.com/{{.}}">{{.}}</a><br />
+                {{/profiles.twitter}}
+                {{#profiles.github}}
+                <strong>Github:</strong> <a href="http://github.com/{{.}}">{{.}}</a><br />
+                {{/profiles.github}}
+            </div>
+        </section>
+
+        {{#work.length}}
+        <section>
+            <header>
+                <h3>Work Experience</h3>
+            </header>
+
+            {{#work}}
+            <h3>{{company}}</h3>
+            <strong>{{position}}</strong>
+            <p>{{startDate}} - {{endDate}}</p>
+            <p>{{summary}}</p>
+            <ul>
+                {{#highlights}}
+                <li>{{.}}</li>
+                {{/highlights}}
+            </ul>
+            {{/work}}
+        </section>
+        {{/work.length}}
+
+        {{#education.length}}
+        <section>
+            <header>
+                <h3>Education</h3>
+            </header>
+
+            {{#education}}
+            <h3>{{institution}}</h3>
+            <h4>{{area}}</h4>
+            <p>{{startDate}} - {{endDate}}</p>
+            <p>{{studyType}}</p>
+            <ul>
+                {{#courses}}
+                <li>{{.}}</li>
+                {{/courses}}
+            </ul>
+            <hr />
+            {{/education}}
+        </section>
+        {{/education.length}}
+
+        {{#skills.length}}
+        <section>
+            <header>
+                <h3>Skills</h3>
+            </header>
+            {{#skills}}
+            <ul>
+                <li>
+                    <h4>{{name}}</h4>
+                    <ul>
+                        {{#keywords}}
+                        <li>{{.}}</li>
+                        {{/keywords}}
+                    </ul>
+                </li>
+            </ul>
+            {{/skills}}
+        </section>
+        {{/skills.length}}
+
+        {{#references.length}}
+        <section>
+            <header>
+                <h3>References</h3>
+            </header>
+            {{#references}}
+            <p>{{reference}} -
+                <strong>{{name}}</strong>
+            </p>
+            {{/references}}
+        </section>
+        {{/references.length}}
+    </body>
+</html>

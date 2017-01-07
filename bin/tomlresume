@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "pathname"
+ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile",
+  Pathname.new(__FILE__).realpath)
+
+require "rubygems"
+require "bundler/setup"
+
+require "thor"
+require "mustache"
+require "tomlrb"
+require "json"
+
+class TomlResume < Thor
+  desc "html <resume.toml>", "Build HTML resume from toml"
+  option :template, default: "templates/resume.html.mustache"
+  def html(source)
+    Mustache.template_file = options[:template]
+
+    toml = File.read(source)
+    data = Tomlrb.parse(toml)
+
+    view = Mustache.new
+
+    data.each do |k, v|
+      view[k.to_sym] = v
+    end
+
+    puts view.render
+  end
+end
+
+TomlResume.start(ARGV)
