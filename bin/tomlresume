@@ -9,18 +9,18 @@ require "rubygems"
 require "bundler/setup"
 
 require "thor"
-require "mustache"
 require "tomlrb"
 require "json"
 
 class TomlResume < Thor
-  desc "html <resume.toml>", "Build HTML resume from toml"
+  desc "html <resume.toml>", "Build HTML resume from TOML"
   option :template, default: "templates/resume.html.mustache"
   def html(source)
+    require "mustache"
+
     Mustache.template_file = options[:template]
 
-    toml = File.read(source)
-    data = Tomlrb.parse(toml)
+    data = read_toml(source)
 
     view = Mustache.new
 
@@ -29,6 +29,22 @@ class TomlResume < Thor
     end
 
     puts view.render
+  end
+
+  desc "json <resume.toml>", "Build JSON resume from TOML"
+  def json(source)
+    require "json"
+
+    data = read_toml(source)
+
+    puts JSON.generate(data)
+  end
+
+  private
+
+  def read_toml(source)
+    toml = File.read(source)
+    Tomlrb.parse(toml)
   end
 end
 
