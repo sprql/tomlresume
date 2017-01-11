@@ -1,3 +1,6 @@
 resume.toml
 resume.html
 resume.json
+
+.sass-cache/
+public/**/*.css*
