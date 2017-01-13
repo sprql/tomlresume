@@ -8,7 +8,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" />
-        <link href="resume.css" rel="stylesheet" />
+        <link href="assets/resume.css" rel="stylesheet" />
     </head>
     <body>
         <article>
@@ -20,22 +20,30 @@
                     <h2>About</h2>
                 </header>
 
-                <p>{{basics.summary}}</p>
-                {{#basics.website}}
-                <a href="{{basics.website}}">{{basics.website}}</a><br />
-                {{/basics.website}}
-                {{#basics.phone}}
-                <strong>Phone:</strong> {{basics.phone}} <br />
-                {{/basics.phone}}
-                {{#basics.email}}
-                <strong>Email:</strong> <a href="mailto:{{basics.email}}">{{basics.email}}</a><br />
-                {{/basics.email}}
+                {{#basics}}
+                    <p>{{summary}}</p>
+                    <dl>
+                        {{#website}}
+                            <dt>Website</dt>
+                            <dd><a href="{{website}}">{{website}}</a></dd>
+                        {{/website}}
+                        {{#phone}}
+                            <dt>Phone</dt>
+                            <dd><a href="tel:{{phone}}">{{phone}}</a></dd>
+                        {{/phone}}
+                        {{#email}}
+                            <dt>Email</dt>
+                            <dd><a href="mailto:{{email}}">{{email}}</a></dd>
+                        {{/email}}
 
-                {{#basics.profiles.length}}
-                    {{#basics.profiles}}
-                    <strong>{{network}}:</strong> <a href="{{url}}">{{url}}</a><br />
-                    {{/basics.profiles}}
-                {{/basics.profiles.length}}
+                        {{#profiles.length}}
+                            {{#profiles}}
+                            <dt>{{network}}</dt>
+                            <dd><a href="{{url}}">{{url}}</a></dt>
+                            {{/profiles}}
+                        {{/profiles.length}}
+                    </dl>
+                {{/basics}}
             </section>
 
             {{#work.length}}

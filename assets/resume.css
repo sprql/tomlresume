@@ -1,0 +1,44 @@
+body {
+    font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    color: #333;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+article {
+    margin: 0 auto;
+    max-width: 112.0rem;
+    padding: 0 2.0rem;
+    width: 100%;
+}
+
+section {
+    margin-top: 1.0rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: -.05rem;
+    margin-top: 1.0rem;
+}
+
+dd:after {
+    content: "";
+    display: block;
+}
+dt {
+    color: #555;
+    display: inline-block;
+    margin-top: 0.5rem;
+    min-width: 5rem;
+}
+dd {
+    margin: 0;
+    display: inline;
+}
