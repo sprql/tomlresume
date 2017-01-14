@@ -10,7 +10,6 @@ article {
     margin: 0 auto;
     max-width: 112.0rem;
     padding: 0 2.0rem;
-    width: 100%;
 }
 
 section {
@@ -41,4 +40,16 @@ dt {
 dd {
     margin: 0;
     display: inline;
+}
+
+
+.company-description {
+    font-size: 0.75em;
+    color: #555;
+}
+
+.company-dates {
+    float: right;
+    font-weight: 300;
+    font-size: 0.75em;
 }

@@ -12,39 +12,42 @@
     </head>
     <body>
         <article>
-            <h1>{{basics.name}}</h1>
-            <h2>{{basics.location.city}}</h2>
+            {{#basics}}
+            <h1>{{name}}</h1>
+            <h2>{{label}}</h2>
 
             <section>
                 <header>
                     <h2>About</h2>
                 </header>
+                <p>{{summary}}</p>
+                <dl>
+                    {{#location}}
+                        <dt>Location</dt>
+                        <dd>{{postalCode}} {{countryCode}} {{region}} {{city}} {{address}}</dd>
+                    {{/location}}
+                    {{#website}}
+                        <dt>Website</dt>
+                        <dd><a href="{{website}}">{{website}}</a></dd>
+                    {{/website}}
+                    {{#phone}}
+                        <dt>Phone</dt>
+                        <dd><a href="tel:{{phone}}">{{phone}}</a></dd>
+                    {{/phone}}
+                    {{#email}}
+                        <dt>Email</dt>
+                        <dd><a href="mailto:{{email}}">{{email}}</a></dd>
+                    {{/email}}
 
-                {{#basics}}
-                    <p>{{summary}}</p>
-                    <dl>
-                        {{#website}}
-                            <dt>Website</dt>
-                            <dd><a href="{{website}}">{{website}}</a></dd>
-                        {{/website}}
-                        {{#phone}}
-                            <dt>Phone</dt>
-                            <dd><a href="tel:{{phone}}">{{phone}}</a></dd>
-                        {{/phone}}
-                        {{#email}}
-                            <dt>Email</dt>
-                            <dd><a href="mailto:{{email}}">{{email}}</a></dd>
-                        {{/email}}
-
-                        {{#profiles.length}}
-                            {{#profiles}}
-                            <dt>{{network}}</dt>
-                            <dd><a href="{{url}}">{{url}}</a></dt>
-                            {{/profiles}}
-                        {{/profiles.length}}
-                    </dl>
-                {{/basics}}
+                    {{#profiles.length}}
+                        {{#profiles}}
+                        <dt>{{network}}</dt>
+                        <dd><a href="{{url}}">{{url}}</a></dt>
+                        {{/profiles}}
+                    {{/profiles.length}}
+                </dl>
             </section>
+            {{/basics}}
 
             {{#work.length}}
             <section>
@@ -53,9 +56,12 @@
                 </header>
 
                 {{#work}}
-                <h3>{{company}}</h3>
-                <strong>{{position}}</strong>
-                <p>{{startDate}} - {{endDate}}</p>
+                <h3>
+                    <span class="company-dates">{{startDate}} — {{endDate}}</span>
+                    {{position}},
+                    <a href="{{website}}">{{company}}</a>
+                </h3>
+                <p class="company-description">{{companyDescription}}</p>
                 <p>{{summary}}</p>
                 <ul>
                     {{#highlights}}
