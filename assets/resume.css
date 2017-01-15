@@ -13,7 +13,7 @@ article {
 }
 
 section {
-    margin-top: 1.0rem;
+    margin-top: 2.0rem;
     border-top: 1px solid #f0f0f0;
 }
 
@@ -23,21 +23,32 @@ h3,
 h4,
 h5,
 h6 {
-    letter-spacing: -.05rem;
-    margin-top: 1.0rem;
+    margin-top: 2rem;
 }
 
-dd:after {
+article > h1 {
+    margin-bottom: 0;
+}
+article > h2 {
+    margin-top: 0;
+    color: #555;
+}
+
+dt {
+    font-weight: 600;
+}
+
+dl.table-list dd:after {
     content: "";
     display: block;
 }
-dt {
+dl.table-list dt {
     color: #555;
     display: inline-block;
     margin-top: 0.5rem;
     min-width: 5rem;
 }
-dd {
+dl.table-list dd {
     margin: 0;
     display: inline;
 }
@@ -48,8 +59,13 @@ dd {
     color: #555;
 }
 
-.company-dates {
+.date-range {
     float: right;
     font-weight: 300;
     font-size: 0.75em;
+}
+
+.unmarked-list {
+    list-style: none;
+    padding: 0;
 }

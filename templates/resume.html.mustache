@@ -21,7 +21,7 @@
                     <h2>About</h2>
                 </header>
                 <p>{{summary}}</p>
-                <dl>
+                <dl class="table-list">
                     {{#location}}
                         <dt>Location</dt>
                         <dd>{{postalCode}} {{countryCode}} {{region}} {{city}} {{address}}</dd>
@@ -57,11 +57,14 @@
 
                 {{#work}}
                 <h3>
-                    <span class="company-dates">{{startDate}} — {{endDate}}</span>
-                    {{position}},
-                    <a href="{{website}}">{{company}}</a>
+                    <span class="date-range">{{startDate}} — {{endDate}}</span>
+                    {{company}},
+                    {{position}}
                 </h3>
-                <p class="company-description">{{companyDescription}}</p>
+                <p class="company-description">
+                    <a href="{{website}}">{{website}}</a>
+                    {{companyDescription}}
+                </p>
                 <p>{{summary}}</p>
                 <ul>
                     {{#highlights}}
@@ -79,9 +82,13 @@
                 </header>
 
                 {{#education}}
-                <h3>{{institution}}</h3>
+                <h3>
+                    {{#startDate}}
+                        <span class="date-range">{{startDate}} — {{endDate}}</span>
+                    {{/startDate}}
+                    {{institution}}
+                </h3>
                 <h4>{{area}}</h4>
-                <p>{{startDate}} - {{endDate}}</p>
                 <p>{{studyType}}</p>
                 <ul>
                     {{#courses}}
@@ -98,7 +105,7 @@
                     <h2>Skills</h2>
                 </header>
                 {{#skills}}
-                <ul>
+                <ul class="unmarked-list">
                     <li>
                         <h4>{{name}}</h4>
                         <ul>
@@ -111,6 +118,20 @@
                 {{/skills}}
             </section>
             {{/skills.length}}
+
+            {{#languages.length}}
+            <section>
+                <header>
+                    <h2>Languages</h2>
+                </header>
+                <dl>
+                {{#languages}}
+                    <dt>{{language}}</dt>
+                    <dd>{{fluency}}</dd>
+                {{/languages}}
+                </dl>
+            </section>
+            {{/languages.length}}
 
             {{#references.length}}
             <section>
