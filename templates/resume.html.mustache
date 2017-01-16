@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{{title}}</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" />
         <link href="assets/resume.css" rel="stylesheet" />
     </head>
@@ -17,10 +17,6 @@
             <h2>{{label}}</h2>
 
             <section>
-                <header>
-                    <h2>About</h2>
-                </header>
-                <p>{{summary}}</p>
                 <dl class="table-list">
                     {{#location}}
                         <dt>Location</dt>
@@ -46,6 +42,13 @@
                         {{/profiles}}
                     {{/profiles.length}}
                 </dl>
+            </section>
+
+            <section>
+                <header>
+                    <h2>About</h2>
+                </header>
+                <p>{{summary}}</p>
             </section>
             {{/basics}}
 
@@ -75,6 +78,26 @@
             </section>
             {{/work.length}}
 
+            {{#skills.length}}
+            <section>
+                <header>
+                    <h2>Skills</h2>
+                </header>
+                <ul class="unmarked-list column-list">
+                    {{#skills}}
+                    <li>
+                        <h4>{{name}}</h4>
+                        <ul class="keyword-list">
+                            {{#keywords}}
+                            <li>{{.}}</li>
+                            {{/keywords}}
+                        </ul>
+                    </li>
+                    {{/skills}}
+                </ul>
+            </section>
+            {{/skills.length}}
+
             {{#education.length}}
             <section>
                 <header>
@@ -99,32 +122,12 @@
             </section>
             {{/education.length}}
 
-            {{#skills.length}}
-            <section>
-                <header>
-                    <h2>Skills</h2>
-                </header>
-                {{#skills}}
-                <ul class="unmarked-list">
-                    <li>
-                        <h4>{{name}}</h4>
-                        <ul>
-                            {{#keywords}}
-                            <li>{{.}}</li>
-                            {{/keywords}}
-                        </ul>
-                    </li>
-                </ul>
-                {{/skills}}
-            </section>
-            {{/skills.length}}
-
             {{#languages.length}}
             <section>
                 <header>
                     <h2>Languages</h2>
                 </header>
-                <dl>
+                <dl class="table-list">
                 {{#languages}}
                     <dt>{{language}}</dt>
                     <dd>{{fluency}}</dd>
@@ -133,16 +136,37 @@
             </section>
             {{/languages.length}}
 
+            {{#interests.length}}
+            <section>
+                <header>
+                    <h2>Interests</h2>
+                </header>
+                <ul class="unmarked-list column-list">
+                    {{#interests}}
+                    <li>
+                        <h4>{{name}}</h4>
+                        <ul class="keyword-list">
+                            {{#keywords}}
+                            <li>{{.}}</li>
+                            {{/keywords}}
+                        </ul>
+                    </li>
+                    {{/interests}}
+                </ul>
+            </section>
+            {{/interests.length}}
+
             {{#references.length}}
             <section>
                 <header>
                     <h2>References</h2>
                 </header>
+                <dl>
                 {{#references}}
-                <p>{{reference}} -
-                    <strong>{{name}}</strong>
-                </p>
+                    <dt>{{name}}</dt>
+                    <dd>{{reference}}</dd>
                 {{/references}}
+                </dl>
             </section>
             {{/references.length}}
         </article>
