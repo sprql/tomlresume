@@ -22,10 +22,10 @@
                         <dt>Location</dt>
                         <dd>{{postalCode}} {{countryCode}} {{region}} {{city}} {{address}}</dd>
                     {{/location}}
-                    {{#website}}
+                    {{#url}}
                         <dt>Website</dt>
-                        <dd><a href="{{website}}">{{website}}</a></dd>
-                    {{/website}}
+                        <dd><a href="{{url}}">{{url}}</a></dd>
+                    {{/url}}
                     {{#phone}}
                         <dt>Phone</dt>
                         <dd><a href="tel:{{phone}}">{{phone}}</a></dd>
@@ -61,12 +61,12 @@
                 {{#work}}
                 <h3>
                     <span class="date-range">{{startDate}} — {{endDate}}</span>
-                    {{company}},
+                    {{name}},
                     {{position}}
                 </h3>
                 <p class="company-description">
-                    <a href="{{website}}">{{website}}</a>
-                    {{companyDescription}}
+                    <a href="{{url}}">{{url}}</a>
+                    {{description}}
                 </p>
                 <p>{{summary}}</p>
                 <ul>
