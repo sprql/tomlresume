@@ -40,6 +40,18 @@ class TomlResume < Thor
     puts JSON.generate(data)
   end
 
+  desc "validate <resume.json>", "Validate JSON resume"
+  def validate(source)
+    require "json-schema"
+
+    schema = "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json"
+    json = File.read(source)
+
+    errors = JSON::Validator.fully_validate(schema, json)
+
+    puts errors.empty? ? "Ok" : errors
+  end
+
   private
 
   def read_toml(source)

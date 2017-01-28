@@ -26,6 +26,11 @@ Build `JSON` variant:
 
     $ bin/tomlresume json resume.toml > resume.json
 
+Validate `JSON` variant:
+
+    $ bin/tomlresume validate resume.json
+
+
 __JSON variant can be used on [jsonresume.org](https://jsonresume.org)__
 
 
