@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{{title}}</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Lato" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" />
         <link href="assets/resume.css" rel="stylesheet" />
     </head>
@@ -45,49 +45,80 @@
             </section>
 
             <section>
-                <header>
-                    <h2>About</h2>
-                </header>
                 <p>{{summary}}</p>
             </section>
             {{/basics}}
 
             {{#work.length}}
             <section>
-                <header>
-                    <h2>Work Experience</h2>
-                </header>
+                <header>Experience</header>
 
+                <ol class="unmarked-list">
                 {{#work}}
+                <li class="work">
+                    <h3>
+                        <span class="role">{{position}}</span>
+                        <a class="name" href="{{url}}">{{name}}</a>
+                        <span class="date-range">{{startDate}} — {{endDate}}</span>
+                    </h3>
+                    {{#description}}
+                    <p class="description">
+                        {{.}}
+                    </p>
+                    {{/description}}
+                    <p>{{summary}}</p>
+                    <ul class="highlights">
+                        {{#highlights}}
+                        <li>{{.}}</li>
+                        {{/highlights}}
+                    </ul>
+                </li>
+                {{/work}}
+                </ul>
+            </section>
+            {{/work.length}}
+
+            {{#projects.length}}
+            <section class="projects">
+                <header>Projects</header>
+
+                {{#projects}}
                 <h3>
+                    {{name}}
                     <span class="date-range">{{startDate}} — {{endDate}}</span>
-                    {{name}},
-                    {{position}}
                 </h3>
-                <p class="company-description">
+                <p class="description">
                     <a href="{{url}}">{{url}}</a>
                     {{description}}
                 </p>
-                <p>{{summary}}</p>
+                <ul class="role inline-list">
+                    {{#roles}}
+                    <li>{{.}}</li>
+                    {{/roles}}
+                </ul>
                 <ul>
                     {{#highlights}}
                     <li>{{.}}</li>
                     {{/highlights}}
+                    {{#keywords}}
+                    <li>{{.}}</li>
+                    {{/keywords}}
                 </ul>
-                {{/work}}
+                {{/projects}}
             </section>
-            {{/work.length}}
+            {{/projects.length}}
 
             {{#skills.length}}
-            <section>
-                <header>
-                    <h2>Skills</h2>
-                </header>
+            <section class="skills">
+                <header>Skills</header>
+
                 <ul class="unmarked-list column-list">
                     {{#skills}}
                     <li>
-                        <h4>{{name}}</h4>
-                        <ul class="keyword-list">
+                        {{#name}}
+                        <h4>{{.}}</h4>
+                        {{/name}}
+                        <ul class="highlights">
                             {{#keywords}}
                             <li>{{.}}</li>
                             {{/keywords}}
@@ -99,34 +130,32 @@
             {{/skills.length}}
 
             {{#education.length}}
-            <section>
-                <header>
-                    <h2>Education</h2>
-                </header>
+            <section class="education">
+                <header>Education</header>
 
                 {{#education}}
-                <h3>
+                <h3>{{institution}}</h3>
+                <p>{{area}}, {{studyType}}</p>
+                <p>
                     {{#startDate}}
                         <span class="date-range">{{startDate}} — {{endDate}}</span>
                     {{/startDate}}
-                    {{institution}}
-                </h3>
-                <h4>{{area}}</h4>
-                <p>{{studyType}}</p>
-                <ul>
+                </p>
+                {{#courses.length}}
+                <ul class="inline-list">
                     {{#courses}}
                     <li>{{.}}</li>
                     {{/courses}}
                 </ul>
+                {{/courses.length}}
                 {{/education}}
             </section>
             {{/education.length}}
 
             {{#languages.length}}
             <section>
-                <header>
-                    <h2>Languages</h2>
-                </header>
+                <header>Languages</header>
+
                 <dl class="table-list">
                 {{#languages}}
                     <dt>{{language}}</dt>
@@ -138,14 +167,13 @@
 
             {{#interests.length}}
             <section>
-                <header>
-                    <h2>Interests</h2>
-                </header>
+                <header>Interests</header>
+
                 <ul class="unmarked-list column-list">
                     {{#interests}}
                     <li>
                         <h4>{{name}}</h4>
-                        <ul class="keyword-list">
+                        <ul class="highlights">
                             {{#keywords}}
                             <li>{{.}}</li>
                             {{/keywords}}
@@ -158,9 +186,8 @@
 
             {{#references.length}}
             <section>
-                <header>
-                    <h2>References</h2>
-                </header>
+                <header>References</header>
+
                 <dl>
                 {{#references}}
                     <dt>{{name}}</dt>
