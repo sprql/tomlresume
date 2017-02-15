@@ -57,9 +57,18 @@
                 {{#work}}
                 <li class="work">
                     <h3>
-                        <span class="role">{{position}}</span>
-                        <a class="name" href="{{url}}">{{name}}</a>
-                        <span class="date-range">{{startDate}} — {{endDate}}</span>
+                        <span class="role">
+                            {{position}}{{#name}},{{/name}}
+                        </span>
+                        {{#url}}
+                            <a class="name" href="{{url}}">{{name}}</a>
+                        {{/url}}
+                        {{^url}}
+                            {{name}}
+                        {{/url}}
+                        <span class="date-range">
+                            {{startDate}} {{#endDate}}—{{/endDate}} {{endDate}}
+                        </span>
                     </h3>
                     {{#description}}
                     <p class="description">
@@ -85,7 +94,7 @@
                 {{#projects}}
                 <h3>
                     {{name}}
-                    <span class="date-range">{{startDate}} — {{endDate}}</span>
+                    <span class="date-range">{{startDate}} {{#endDate}}—{{/endDate}} {{endDate}}</span>
                 </h3>
                 <p class="description">
                     <a href="{{url}}">{{url}}</a>
@@ -135,7 +144,7 @@
 
                 {{#education}}
                 <h3>{{institution}}</h3>
-                <p>{{area}}, {{studyType}}</p>
+                <p>{{area}}{{#studyType}}, {{.}}{{/studyType}}</p>
                 <p>
                     {{#startDate}}
                         <span class="date-range">{{startDate}} — {{endDate}}</span>

@@ -99,9 +99,6 @@ dl.table-list dd {
     float: right;
     line-height: 2.25;
 }
-.work .role:after {
-    content: ", "
-}
 .work h3 {
     margin-bottom: 0;
 }
