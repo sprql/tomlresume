@@ -5,19 +5,38 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>tomlresume</title>
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.min.css" />
+        <link rel="stylesheet" href="/assets/tomlresume.css" />
     </head>
     <body>
-        <main class="container">
-            <header>
-                <h1>tomlresume</h1>
-                <p>
+        <header>
+            <div class="container">
+                <h1>
+                    tomlresume
+                    <small>
                     Open source TOML-based standard for resumes
-                    <br />
-                    <a href="https://github.com/sprql/tomlresume">View on GitHub</a>
-                </p>
-            </header>
+                    </small>
+                </h1>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="row">
+                <div class="column">
+                    <a class="button button-outline button-small" href="https://github.com/sprql/tomlresume">View on GitHub</a>
+                    <a class="button button-outline button-small float-right" href="#" data-action="tomlresume-print">Print</a>
+                    <textarea class="tomlresume-editor" data-behavior="tomlresume-source">
+                    </textarea>
+                </div>
+                <div class="column">
+                    <iframe class="tomlresume-iframe" data-behavior="tomlresume-html-resume" src=""></iframe>
+                </div>
+            </div>
         </main>
+        <script src="https://cdn.rawgit.com/jakwings/toml-j0.4/c6d4df55/dist/toml-browser.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+        <script src="/assets/tomlresume.js"></script>
     </body>
 </html>
