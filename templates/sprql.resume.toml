@@ -1,15 +1,15 @@
 [basics]
-name    = ""
-label   = ""  # e.g. Web Developer
+name    = "Alexander Obukhov"
+label   = "Software Engineer"  # e.g. Web Developer
 image   = ""  # URL (as per RFC 3986) to a image in JPEG or PNG format
 email   = ""  # e.g. thomas@gmail.example.com
 phone   = ""  # Phone numbers are stored as strings so use any format you like, e.g. 712-117-2923
-url     = ""  # URL (as per RFC 3986) to your website, e.g. personal homepage
-summary = ""  # Write a short 2-3 sentence biography about yourself
+url     = "https://sprql.space"  # URL (as per RFC 3986) to your website, e.g. personal homepage
+summary = "Passionate programmer"  # Write a short 2-3 sentence biography about yourself
 
 
 [basics.location]
-address     = ""  # To add multiple address lines, use \n. For example, 1234 Glücklichkeit Straße\nHinterhaus 5. Etage li.
+address     = "Earth"  # To add multiple address lines, use \n. For example, 1234 Glücklichkeit Straße\nHinterhaus 5. Etage li.
 postalCode  = ""
 city        = ""
 countryCode = ""  # code as per ISO-3166-1 ALPHA-2, e.g. US, AU, IN
@@ -18,15 +18,15 @@ region      = ""  # The general region where you live. Can be a US state, or a p
 
 # Specify any number of social networks that you participate in
 [[basics.profiles]]
-network  = ""  # e.g. Facebook or Twitter
-username = ""  # e.g. neutralthoughts
-url      = ""  # e.g. http://twitter.example.com/neutralthoughts
+network  = "Github"  # e.g. Facebook or Twitter
+username = "sprql"  # e.g. neutralthoughts
+url      = "https://github.com/sprql"  # e.g. http://twitter.com/neutralthoughts
 
 
 [[work]]
 name        = ""  # e.g. Facebook
 description = ""  # e.g. Social Media Company
-position    = ""  # e.g. Software Engineer
+position    = "Software Engineer"  # e.g. Software Engineer
 url         = ""  # e.g. http://facebook.example.com
 startDate   = ""  # ISO 8601 date standard e.g. 2014-06-29
 endDate     = ""  # e.g. 2012-06-29
@@ -46,7 +46,7 @@ highlights   = []  # Specify multiple accomplishments, e.g. Increased profits by
 
 [[education]]
 institution = ""  # e.g. Massachusetts Institute of Technology
-area        = ""  # e.g. Arts
+area        = "Computer Science"  # e.g. Arts
 studyType   = ""  # e.g. Bachelor
 startDate   = ""  # e.g. 2014-06-29
 endDate     = ""  # e.g. 2012-06-29
@@ -75,35 +75,82 @@ summary     = ""  # Short summary of publication. e.g. Discussion of the World W
 [[skills]]
 name     = ""  # e.g. Web Development
 level    = ""  # e.g. Master
-keywords = []  # List some keywords pertaining to this skill
+keywords = ["Elixir", "Ruby", "JavaScript"]  # List some keywords pertaining to this skill
+
+[[skills]]
+name     = ""
+level    = ""
+keywords = [
+  "Go",
+  "Objective-C",
+  "Swift"
+]
+
+[[skills]]
+name     = ""
+level    = ""
+keywords = [
+  "OTP",
+  "Phoenix",
+  "Ruby On Rails"
+]
+
+[[skills]]
+name     = ""
+level    = ""
+keywords = [
+  "PostgreSQL",
+  "Redis"
+]
+
+[[skills]]
+name     = ""
+level    = ""
+keywords = [
+  "Docker",
+  "Ansible"
+]
+
+[[skills]]
+name     = ""
+level    = ""
+keywords = [
+  "HTML",
+  "CSS",
+  "XSLT",
+]
 
 
 # List any other languages you speak
 [[languages]]
-language = ""  # e.g. English, Spanish
-fluency  = ""  # e.g. Fluent, Beginner
+language = "Russian"  # e.g. English, Spanish
+fluency = "Native speaker"  # e.g. Fluent, Beginner
+
+[[languages]]
+language = "English"
+fluency  = "Professional working proficiency"
 
 
 [[interests]]
-name     = ""  # e.g. Philosophy
+name     = "Music"  # e.g. Philosophy
 keywords = []  # e.g. Friedrich Nietzsche
 
 
 # List references you have received
 [[references]]
 name      = ""  # e.g. Timothy Cook
-reference = ""  # e.g. Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing.
+reference = "By request"  # e.g. Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing.
 
 
 # Specify career projects
 [[projects]]
-name        = ""  # e.g. The World Wide Web
+name        = "tomlresume"  # e.g. The World Wide Web
 description = ""  # Short summary of project. e.g. Collated works of 2017.
 highlights  = []  # Specify multiple features, e.g. Directs you close but not quite there
 keywords    = []  # Specify special elements involved, e.g. AngularJS
 startDate   = ""  # ISO 8601 date standard e.g. 2014-06-29
 endDate     = ""  # e.g. 2012-06-29
-url         = ""  # e.g. http://www.computer.example.org/csdl/mags/co/1996/10/rx069-abs.html"
+url         = "https://github.com/sprql/tomlresume"  # e.g. http://www.computer.example.org/csdl/mags/co/1996/10/rx069-abs.html"
 roles       = []  # Specify your role on this project or in company, e.g. Team Lead, Speaker, Writer
 entity      = ""  # Specify the relevant company/entity affiliations e.g. 'corporationXYZ'"
 type        = ""  # e.g. 'volunteering', 'presentation', 'talk', 'application', 'conference'

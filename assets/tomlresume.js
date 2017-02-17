@@ -1,7 +1,7 @@
 'use strict';
 
 (function (window) {
-    const tomlTemplateURL = 'templates/resume.toml';
+    const tomlTemplateURL = 'templates/sprql.resume.toml';
     const htmlTemplateURL = 'templates/resume.html.mustache';
 
     let tomlTextarea = document.querySelector('[data-behavior=tomlresume-source]');

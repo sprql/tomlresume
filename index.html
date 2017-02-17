@@ -13,25 +13,36 @@
     <body>
         <header>
             <div class="container">
-                <h1>
-                    tomlresume
-                    <small>
-                    Open source TOML-based standard for resumes
-                    </small>
-                </h1>
+                <div class="row">
+                    <div class="column">
+                        <h1>
+                            tomlresume
+                            <small>
+                            Open source TOML-based standard for resumes
+                            </small>
+                        </h1>
+                    </div>
+                    <div>
+                        <nav class="pull-right">
+                            <a class="button button-outline button-small" href="https://github.com/sprql/tomlresume">View on GitHub</a>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </header>
 
-        <main class="container">
-            <div class="row">
-                <div class="column">
-                    <a class="button button-outline button-small" href="https://github.com/sprql/tomlresume">View on GitHub</a>
-                    <a class="button button-outline button-small float-right" href="#" data-action="tomlresume-print">Print</a>
-                    <textarea class="tomlresume-editor" data-behavior="tomlresume-source">
-                    </textarea>
-                </div>
-                <div class="column">
-                    <iframe class="tomlresume-iframe" data-behavior="tomlresume-html-resume" src=""></iframe>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <a class="button button-outline button-small" href="https://sprql.github.io/tomlresume/templates/resume.toml">Download template</a>
+                        <textarea class="tomlresume-editor" data-behavior="tomlresume-source">
+                        </textarea>
+                    </div>
+                    <div class="column">
+                        <a class="button button-outline button-small float-right" href="#" data-action="tomlresume-print">Print</a>
+                        <iframe class="tomlresume-iframe" data-behavior="tomlresume-html-resume" src=""></iframe>
+                    </div>
                 </div>
             </div>
         </main>
